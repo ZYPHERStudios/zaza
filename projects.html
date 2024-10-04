@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="./images/logo.png" rel="icon" />
+    <link href="./css/index.css" rel="stylesheet" />
+    <meta name="description" content="Zaza is an innovative educational platform designed for K-12 students to take interactive tests, enhance learning, and track progress. Empowering young minds with comprehensive assessments in a user-friendly environment. Join Zaza for a smarter, more engaging way to learn.">
+    <meta name="keywords" content="K-12 education, online tests, student assessments, interactive learning, educational platform, student progress, e-learning, school tests, educational resources, Zaza, academic success, digital learning tools, student quizzes">
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <center>
+      <input onkeyup="searchGames(this.value.trim().toLowerCase())" class="searchbar" placeholder="Search" />
+    </center>
+
+    <div class="saveItems">
+      <button class="button" onclick="downloadMainSave()">Download Save</button>
+      <button class="button" onclick="uploadMainSave()">Upload Save</button>
+	    <div class="button" hidden><a href="./assets/neal.fun/index.html"><button class="button">Update! (09/11/23) [BETA] has entered, relived. You can go on it by clicking this button!</button></a></div>
+      <div class="uploadResult"></div>
+    </div>
+
+    <input class="hiddenUpload" type="file" accept=".save" />
+    
+
+    <div class="games"></div>
+    <span class="spinner">
+      <svg viewBox="22 22 44 44">
+        <circle class="spinnerSvg" cx="44" cy="44" r="20.2" fill="none" stroke-width="3.6"></circle>
+      </svg>
+    </span>
+    <div class="nogames">No results found. If you want to add a game, ask Justin.</div>
+
+    <footer>© ZYPHER (justinkk, colbster937, x3n1thz) + Echo 2024</footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+    <script src="./js/games-server.js"></script>
+    <script src="./js/games.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>

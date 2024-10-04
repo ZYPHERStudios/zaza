@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background: #05060f linear-gradient(0deg, rgba(216,236,248,.06), rgba(152,192,239,.06));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    font-size: max(calc(var(--_size) * 0.03), 10px);
+    --_factor: min(600px, 80vh);
+    --_size: min(var(--_factor), 80vw);
+}
+
+h2, p, span {
+    margin: 0;
+    padding: 0;
+    color: #bad6f7;
+}
+
+.hero {
+    text-align: center;
+    position: relative;
+}
+  
+  .heroT {
+    position: relative;
+    display: inline-block;
+    line-height: 1;
+    margin-bottom: 0em; /* Add some margin to separate from icons */
+}
+
+.heroT > h2 {
+    font-size: 7em;
+    font-weight: 600;
+    color: #9dc3f7;
+    background:
+    radial-gradient(2em 2em at 50% 50%, transparent calc(var(--p) - 2em), #fff calc(var(--p) - 1em), #fff calc(var(--p) - 0.4em), transparent var(--p)),
+    linear-gradient(0deg, #bad1f1 30%, #9dc3f7 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 16px rgba(174,207,242,.24);
+    --p: 0%;
+    transition: --p 3s linear;
+    animation: pulse 10s linear 1.2s infinite;
+    position: relative;
+    z-index: 2; /* Ensures it is on top of the glow effect */
+}
+
+.heroT h2:nth-child(2) {
+    font-size: 7em;
+    font-weight: 600;
+    position: absolute;
+    top: 0; /* Aligns perfectly with the first h2 */
+    left: 50%;
+    transform: translateX(-50%) translateY(0.2em); /* Slight vertical offset */
+    background:
+    radial-gradient(2em 2em at 50% 50%, transparent calc(var(--p) - 2em), transparent calc(var(--p) - 1em), #fff calc(var(--p) - 1em), #fff calc(var(--p) - 0.4em), transparent calc(var(--p) - 0.4em), transparent var(--p));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: blur(16px) opacity(0.4);
+    z-index: 1; /* Places it below the primary text */
+}
+
+@keyframes pulse { 
+    0% { --p:0%; }
+    50% { --p:300%; }
+    100% { --p:300%; }
+}
+
+@property --p {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 0%;
+}
+
+.content {
+    text-align: center;
+    color: white;
+    padding: 1.1em;
+}
+
+.content h2 {
+    font-size: 2.5em;
+    margin-bottom: 1em;
+}
+
+.content p {
+    font-size: 1.2em;
+}
+
+.icon-container {
+    font-size: 1.3em;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin: 0 auto; /* Center icons */
+    padding: 1em 0; /* Add padding to create space between "zaza" and the icons */
+    z-index: 1;
+    position: relative;
+  }
+  
+  .icon-container i {
+    font-size: 2em;
+    color: #bad6f7;
+    transition: transform 0.3s ease;
+  }
+  
+  .icon-container i:hover {
+    transform: scale(1.2);
+    color: #ffffff;
+  }
+  
+  .content {
+    text-align: center;
+    margin-top: -10px; /* Adjust margin to bring subtitle closer */
+  }
